@@ -1,0 +1,261 @@
+/* frontend/src/components/dashboard/Calendar.css */
+
+/* Drag and Drop Styles */
+.drag-over {
+  background-color: rgba(59, 130, 246, 0.05);
+  border: 2px dashed #3b82f6;
+  border-radius: 8px;
+}
+
+.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+  cursor: grabbing;
+}
+
+/* Calendar Grid Animations */
+.calendar-day {
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-day:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Task Card Styles */
+.task-card {
+  transition: all 0.2s ease-in-out;
+  cursor: grab;
+}
+
+.task-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-card:active {
+  cursor: grabbing;
+}
+
+/* Priority Indicators */
+.priority-high {
+  border-left: 4px solid #ef4444;
+}
+
+.priority-medium {
+  border-left: 4px solid #f59e0b;
+}
+
+.priority-low {
+  border-left: 4px solid #10b981;
+}
+
+/* Status Dots */
+.status-dot {
+  position: relative;
+  display: inline-block;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.status-pending::after {
+  background-color: #f59e0b;
+}
+
+.status-progress::after {
+  background-color: #3b82f6;
+}
+
+.status-completed::after {
+  background-color: #10b981;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Time Slots (Day View) */
+.time-slot {
+  border-bottom: 1px solid #f1f5f9;
+  min-height: 60px;
+  position: relative;
+}
+
+.time-slot:hover {
+  background-color: #f8fafc;
+}
+
+.time-slot.current-hour {
+  background-color: rgba(59, 130, 246, 0.05);
+  border-left: 3px solid #3b82f6;
+}
+
+/* Current Time Indicator */
+.current-time-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ef4444;
+  z-index: 10;
+}
+
+.current-time-line::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: -4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ef4444;
+}
+
+/* Week View Enhancements */
+.week-day {
+  min-height: 200px;
+  position: relative;
+}
+
+.week-day.today {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(147, 197, 253, 0.05) 100%);
+}
+
+/* Month View Enhancements */
+.month-day {
+  min-height: 120px;
+  position: relative;
+}
+
+.month-day.other-month {
+  opacity: 0.4;
+}
+
+.month-day.today {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 197, 253, 0.15) 100%);
+}
+
+.month-day.today .day-number {
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Task Overflow Indicator */
+.task-overflow {
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.9));
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 2px 6px;
+  font-size: 10px;
+  color: #6b7280;
+}
+
+/* Loading States */
+.calendar-loading {
+  min-height: 400px;
+  display: flex;
+  items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .task-card {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+  
+  .week-day, .month-day {
+    min-height: 80px;
+  }
+  
+  .time-slot {
+    min-height: 40px;
+  }
+}
+
+/* Accessibility Improvements */
+.task-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.calendar-day:focus-within {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Dark Mode Support (if implemented later) */
+@media (prefers-color-scheme: dark) {
+  .calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .task-card {
+    border-color: #374151;
+  }
+  
+  .time-slot {
+    border-color: #374151;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .calendar-header {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .task-card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+  }
+  
+  .drag-handles, .quick-add-buttons {
+    display: none;
+  }
+}
