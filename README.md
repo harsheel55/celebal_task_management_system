@@ -1,6 +1,6 @@
 # 📋 Celebal Task Management System
 
-[![License](<img width="1894" height="908" alt="image" src="https://github.com/user-attachments/assets/a547753e-ec69-41a9-9cca-07381f8913f1" />)](LICENSE)
+[![License](<img width="1894" height="908" alt="image" src="https://github.com/user-attachments/assets/a547753e-ec69-41a9-9cca-07381f8913f1" />)
 [![Node.js](https://img.shields.io/badge/Node.js-16+-green.svg)](https://nodejs.org)
 [![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4.4+-green.svg)](https://mongodb.com)
