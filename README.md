@@ -1,11 +1,4 @@
 # 📋 Celebal Task Management System
-
-![License](<img width="1894" height="908" alt="image" src="https://github.com/user-attachments/assets/0042d1df-8b72-4b9e-ad3a-4ff8e83ae49b" />)
-[![Node.js](https://img.shields.io/badge/Node.js-16+-green.svg)](https://nodejs.org)
-[![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4.4+-green.svg)](https://mongodb.com)
-[![Express](https://img.shields.io/badge/Express-4.18+-lightgrey.svg)](https://expressjs.com)
-
 A full-stack task management system built with the **MERN stack** during the **Celebal Technologies** internship program. This application provides a comprehensive solution for managing tasks, projects, and team productivity with a modern, responsive interface.
 
 ## 🌟 Features
